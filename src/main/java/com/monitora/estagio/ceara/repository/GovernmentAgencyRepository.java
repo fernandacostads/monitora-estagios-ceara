@@ -13,10 +13,10 @@ public class GovernmentAgencyRepository {
     private List<GovernmentAgency> list2024;
 
     public GovernmentAgencyRepository(List<GovernmentAgencyDTO> list2021, List<GovernmentAgencyDTO> list2022, List<GovernmentAgencyDTO> list2023, List<GovernmentAgencyDTO> list2024) {
-        this.list2021 = ConverterListGovernmentAgencyDTO.converterList(list2021);
-        this.list2022 = ConverterListGovernmentAgencyDTO.converterList(list2022);
-        this.list2023 = ConverterListGovernmentAgencyDTO.converterList(list2023);
-        this.list2024 = ConverterListGovernmentAgencyDTO.converterList(list2024);
+        this.list2021 = ConverterToListGovernmentAgency.converterList(list2021);
+        this.list2022 = ConverterToListGovernmentAgency.converterList(list2022);
+        this.list2023 = ConverterToListGovernmentAgency.converterList(list2023);
+        this.list2024 = ConverterToListGovernmentAgency.converterList(list2024);
     }
 
     public List<GovernmentAgency> getList2021() {

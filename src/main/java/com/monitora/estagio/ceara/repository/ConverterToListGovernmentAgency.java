@@ -4,12 +4,11 @@ import com.monitora.estagio.ceara.model.GovernmentAgency;
 import com.monitora.estagio.ceara.utils.dto.GovernmentAgencyDTO;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ConverterListGovernmentAgencyDTO {
-    private final static ConverterGovernmentAgencyDTO converterDTO = (GovernmentAgencyDTO governmentAgencyDTO) -> new GovernmentAgency(
+public class ConverterToListGovernmentAgency {
+    private final static ConverterToGovernmentAgency converterDTO = (GovernmentAgencyDTO governmentAgencyDTO) -> new GovernmentAgency(
             governmentAgencyDTO.date(),
             governmentAgencyDTO.personName(),
             governmentAgencyDTO.agency(),

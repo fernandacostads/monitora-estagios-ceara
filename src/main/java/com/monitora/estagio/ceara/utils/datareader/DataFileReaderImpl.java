@@ -22,7 +22,7 @@ public class DataFileReaderImpl {
         try (BufferedReader br = new BufferedReader(new FileReader(csv))) {
             govAgencyList = br.lines()
                     .skip(1)
-                    .map(newDTO::newGovernmentAgencyDTO)
+                    .map(newDTO::converterLineToDTO)
                     .collect(Collectors.toList());
         } catch (IOException e) {
             e.printStackTrace();
