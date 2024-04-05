@@ -7,7 +7,10 @@ import com.monitora.estagio.ceara.repository.GovernmentAgencyRepository;
 public class App {
 
     public static void main(String[] args) {
+        long inicio = System.currentTimeMillis();
+
         GovernmentAgencyRepository governmentAgencyRepository = ConfigRepository.config();
+
 
 //        System.out.println(governmentAgencyRepository.getList2021().getFirst());
 //        System.out.println(governmentAgencyRepository.getList2021().getLast());
@@ -18,5 +21,7 @@ public class App {
 //        System.out.println(governmentAgencyRepository.getList2024().getFirst());
 //        System.out.println(governmentAgencyRepository.getList2024().getLast());
         //MainScreen.start();
+        long fim = System.currentTimeMillis();
+        System.out.println("app: " + (fim - inicio));
     }
 }

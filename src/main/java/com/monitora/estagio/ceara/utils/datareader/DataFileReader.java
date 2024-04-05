@@ -35,6 +35,7 @@ public class DataFileReader implements Runnable {
 
     @Override
     public void run() {
+        long inicio = System.currentTimeMillis();
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
             this.govAgencyList = br.lines()
                     .skip(1)
@@ -45,5 +46,7 @@ public class DataFileReader implements Runnable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        long fim = System.currentTimeMillis();
+        System.out.println("thread - " + path + ": "+ (fim - inicio));
     }
 }

@@ -13,10 +13,10 @@ public class ConfigRepository {
     public static GovernmentAgencyRepository config() {
         CountDownLatch latch = new CountDownLatch(4);
 
-        DataFileReader reader2021 = new DataFileReader("/home/fer/workspace/monitora-estagios-ceara/src/main/java/com/monitora/estagio/ceara/resources/csv/2021.csv", latch);
-        DataFileReader reader2022 = new DataFileReader("/home/fer/workspace/monitora-estagios-ceara/src/main/java/com/monitora/estagio/ceara/resources/csv/2022.csv", latch);
-        DataFileReader reader2023 = new DataFileReader("/home/fer/workspace/monitora-estagios-ceara/src/main/java/com/monitora/estagio/ceara/resources/csv/2023.csv", latch);
-        DataFileReader reader2024 = new DataFileReader("/home/fer/workspace/monitora-estagios-ceara/src/main/java/com/monitora/estagio/ceara/resources/csv/2024.csv", latch);
+        DataFileReader reader2021 = new DataFileReader("src/main/java/com/monitora/estagio/ceara/resources/csv/2021.csv", latch);
+        DataFileReader reader2022 = new DataFileReader("src/main/java/com/monitora/estagio/ceara/resources/csv/2022.csv", latch);
+        DataFileReader reader2023 = new DataFileReader("src/main/java/com/monitora/estagio/ceara/resources/csv/2023.csv", latch);
+        DataFileReader reader2024 = new DataFileReader("src/main/java/com/monitora/estagio/ceara/resources/csv/2024.csv", latch);
 
         Thread r2021 = new Thread(reader2021);
         Thread r2022 = new Thread(reader2022);
@@ -29,7 +29,7 @@ public class ConfigRepository {
         r2023.start();
         r2024.start();
 
-        // Aguardando todas as threads terminarem
+        //Aguardando todas as threads terminarem
         try {
             latch.await();
         } catch (InterruptedException e) {
@@ -43,7 +43,7 @@ public class ConfigRepository {
         List<GovernmentAgencyDTO> list2024 = reader2024.getGovAgencyList();
 
         long fim = System.currentTimeMillis();
-        System.out.println(fim - inicio);
+        System.out.println("esperando threads:" + (fim - inicio));
 
 //        System.out.println(list2021.size());
 //        System.out.println(list2022.size());
