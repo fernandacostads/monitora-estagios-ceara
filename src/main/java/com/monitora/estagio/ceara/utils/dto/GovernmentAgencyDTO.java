@@ -15,8 +15,4 @@ public record GovernmentAgencyDTO (
         String netSalary,
         String daily) {
 
-        public GovernmentAgency converter() {
-            return ConverterGovernmentAgencyDTO.converter(this);
-        }
-
 }
