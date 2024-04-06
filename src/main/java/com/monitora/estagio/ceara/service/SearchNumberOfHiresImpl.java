@@ -21,7 +21,10 @@ public class SearchNumberOfHiresImpl implements SearchNumberOfHires {
     public List<ResultSearchDTO> exucute() {
         Map<String, List<GovernmentAgency>> mapByAgency = repository.getMapByAgency();
         return mapByAgency.entrySet().stream()
-                .map(entry -> new ResultSearchDTO(entry.getKey(), entry.getValue().size()))
+                .map(entry -> new ResultSearchDTO.Builder()
+                        .governmentAgency(entry.getKey())
+                        .numberOfHires(entry.getValue().size())
+                        .build())
                 .collect(Collectors.toList());
     }
 

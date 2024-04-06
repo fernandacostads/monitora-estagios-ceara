@@ -28,7 +28,9 @@ public class SearchAverageSalaryImpl implements SearchAverageSalary {
                             .map(GovernmentAgency::getGrossSalary)
                             .reduce(BigDecimal.ZERO, BigDecimal::add);
                     BigDecimal average = total.divide(BigDecimal.valueOf(agencies.size()), 2, RoundingMode.HALF_UP);
-                    return new ResultSearchDTO(entry.getKey(), average);
+                    return new ResultSearchDTO.Builder()
+                            .governmentAgency(entry.getKey())
+                            .averageSalary(average).build();
                 })
                 .collect(Collectors.toList());
     }

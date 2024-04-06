@@ -16,15 +16,11 @@ public class CustomFilterControllerImpl implements Controller<FilterDTO>{
 
     @Override
     public void execute(FilterDTO dto) {
-        String searchType = dto.searchType();
-        String selectedGovernmentAgency = dto.selectedGovernmentAgency();
-        String ordering = dto.ordering();
-
-        List<ResultSearchDTO> searchAverageSalary = service.searchAverageSalary().exucute();
-        List<ResultSearchDTO> searchNumberOfHires = service.searchNumberOfHires().exucute();
-
-        System.out.println(searchAverageSalary.size());
-        System.out.println();
-        System.out.println(searchNumberOfHires.size());
+        List<ResultSearchDTO> resultSearchDTOS = dto.searchType()
+                .equalsIgnoreCase("Número de contratação")
+                ? service.searchNumberOfHires().exucute()
+                : service.searchAverageSalary().exucute();
+        resultSearchDTOS = service.customFilter().filter(resultSearchDTOS, dto.selectedGovernmentAgency(), dto.ordering());
+        System.out.println(resultSearchDTOS.toString());
     }
 }
