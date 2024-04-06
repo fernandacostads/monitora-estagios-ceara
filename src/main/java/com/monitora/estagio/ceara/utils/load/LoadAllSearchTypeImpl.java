@@ -6,6 +6,6 @@ public class LoadAllSearchTypeImpl implements LoadAllSearchType {
 
     @Override
     public String[] getAll() {
-        return new String[] { "Número de contratação", "Média salarial", "Taxa de contratação" };
+        return new String[] { "Número de contratação", "Média salarial" };
     }
 }
