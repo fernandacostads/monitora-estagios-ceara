@@ -51,4 +51,8 @@ public class GovernmentAgency {
                 ", daily=" + daily +
                 '}';
     }
+
+    public String getAgency() {
+        return agency;
+    }
 }

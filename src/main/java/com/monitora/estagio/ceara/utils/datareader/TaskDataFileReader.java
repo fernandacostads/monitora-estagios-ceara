@@ -10,14 +10,14 @@ import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.stream.Collectors;
 
-public class DataFileReader implements Runnable {
+public class TaskDataFileReader implements Runnable {
 
     private List<GovernmentAgencyDTO> govAgencyList;
     private String path;
     private ConverterLineToDTO newDTO;
     private CountDownLatch latch;
 
-    public DataFileReader(String path, CountDownLatch latch) {
+    public TaskDataFileReader(String path, CountDownLatch latch) {
         this.govAgencyList = new ArrayList<>();
         this.path = path;
         this.newDTO = (String line) ->  {
@@ -27,10 +27,6 @@ public class DataFileReader implements Runnable {
                     fields[6],fields[7], fields[8],fields[9],fields[10]);
         };
         this.latch = latch;
-    }
-
-    public List<GovernmentAgencyDTO> getGovAgencyList() {
-        return govAgencyList;
     }
 
     @Override
@@ -48,5 +44,9 @@ public class DataFileReader implements Runnable {
         }
         long fim = System.currentTimeMillis();
         System.out.println("thread - " + path + ": "+ (fim - inicio));
+    }
+
+    public List<GovernmentAgencyDTO> getGovAgencyList() {
+        return govAgencyList;
     }
 }
