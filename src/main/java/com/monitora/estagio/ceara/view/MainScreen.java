@@ -236,6 +236,7 @@ public class MainScreen extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }
     public void start(){
+        System.out.println("interface");
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {

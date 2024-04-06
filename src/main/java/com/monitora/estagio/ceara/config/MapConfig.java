@@ -12,11 +12,11 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 
-public class RepositoryConfig {
+public class MapConfig {
 
     private static Map<String, List<GovernmentAgencyDTO>> mapByAgencyDTO;
 
-    public static GovernmentAgencyRepository config() {
+    public static Map<String, List<GovernmentAgencyDTO>> config() {
         CountDownLatch latch = new CountDownLatch(4);
 
         TaskDataFileReader taskFileReader2021 = new TaskDataFileReader("src/main/java/com/monitora/estagio/ceara/resources/csv/2021.csv", latch);
@@ -59,7 +59,7 @@ public class RepositoryConfig {
         long fim = System.currentTimeMillis();
         System.out.println("esperando threads:" + (fim - inicio));
 
-        return new GovernmentAgencyRepository(mapByAgencyDTO);
+        return mapByAgencyDTO;
     }
 
     public static Map<String, List<GovernmentAgencyDTO>> getMapByAgencyDTO() {
