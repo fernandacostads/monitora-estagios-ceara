@@ -1,18 +1,17 @@
 package com.monitora.estagio.ceara.app;
 
 
+import com.monitora.estagio.ceara.config.ConfigRepository;
 import com.monitora.estagio.ceara.repository.GovernmentAgencyRepository;
-import com.monitora.estagio.ceara.utils.datareader.DataFileReaderImpl;
 
 public class App {
 
     public static void main(String[] args) {
-        GovernmentAgencyRepository governmentAgencyRepository = new GovernmentAgencyRepository(
-                DataFileReaderImpl.readerFilesCsv("src/main/java/com/monitora/estagio/ceara/resources/csv/2021.csv"),
-        DataFileReaderImpl.readerFilesCsv("src/main/java/com/monitora/estagio/ceara/resources/csv/2022.csv"),
-        DataFileReaderImpl.readerFilesCsv("src/main/java/com/monitora/estagio/ceara/resources/csv/2023.csv"),
-        DataFileReaderImpl.readerFilesCsv("src/main/java/com/monitora/estagio/ceara/resources/csv/2024.csv")
-        );
+        long inicio = System.currentTimeMillis();
+
+        GovernmentAgencyRepository governmentAgencyRepository = ConfigRepository.config();
+
+
 //        System.out.println(governmentAgencyRepository.getList2021().getFirst());
 //        System.out.println(governmentAgencyRepository.getList2021().getLast());
 //        System.out.println(governmentAgencyRepository.getList2022().getFirst());
@@ -22,5 +21,7 @@ public class App {
 //        System.out.println(governmentAgencyRepository.getList2024().getFirst());
 //        System.out.println(governmentAgencyRepository.getList2024().getLast());
         //MainScreen.start();
+        long fim = System.currentTimeMillis();
+        System.out.println("app: " + (fim - inicio));
     }
 }
