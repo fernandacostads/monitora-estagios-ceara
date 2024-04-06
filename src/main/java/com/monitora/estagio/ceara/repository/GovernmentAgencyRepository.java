@@ -11,10 +11,6 @@ public class GovernmentAgencyRepository {
     public GovernmentAgencyRepository(Map<String, List<GovernmentAgencyDTO>> mapByAgencyDTO) {
         long inicio = System.currentTimeMillis();
 
-        TaskConverterToMapGovernmentAgency taskConverter = new TaskConverterToMapGovernmentAgency(mapByAgencyDTO);
-        Thread converter = new Thread(taskConverter);
-        converter.start();
-
         this.mapByAgency = ConverterToMapGovernmentAgency.converterMapByAgency(mapByAgencyDTO);
 
         System.out.println("size convertida: " + mapByAgencyDTO.size());

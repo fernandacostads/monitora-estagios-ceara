@@ -48,7 +48,7 @@ public class RepositoryConfig {
         List<GovernmentAgencyDTO> list2023 = taskFileReader2023.getGovAgencyList();
         List<GovernmentAgencyDTO> list2024 = taskFileReader2024.getGovAgencyList();
 
-        //agrupa as litas em um novo fluxo
+        //agrupa as listas em um novo fluxo
         mapByAgencyDTO = Stream.of(list2021, list2022, list2023, list2024)
                         //transforma o fluxo de listas em um único fluxo de GovernmentAgencyDTO
                         //List::stream é a função que chama o stream() para cada lista

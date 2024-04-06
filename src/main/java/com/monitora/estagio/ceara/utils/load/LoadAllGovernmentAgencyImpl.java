@@ -7,7 +7,7 @@ public class LoadAllGovernmentAgencyImpl implements LoadAllGovernmentAgency {
 
     @Override
     public String[] getAll() {
-        System.out.println(RepositoryConfig.getMapByAgencyDTO().keySet().size());
+        System.out.println("size DTO: " + RepositoryConfig.getMapByAgencyDTO().keySet().size());
         return RepositoryConfig.getMapByAgencyDTO().keySet().toArray(String[]::new);
     }
 }
