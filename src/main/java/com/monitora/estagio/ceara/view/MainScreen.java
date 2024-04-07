@@ -283,6 +283,8 @@ public class MainScreen extends javax.swing.JFrame {
 //        System.out.println(searchType);
 //        System.out.println(ordering);
 
+
+
         //preenche a tabela
 
     }
