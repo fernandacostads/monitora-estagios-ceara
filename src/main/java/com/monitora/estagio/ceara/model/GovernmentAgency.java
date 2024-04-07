@@ -51,4 +51,12 @@ public class GovernmentAgency {
                 ", daily=" + daily +
                 '}';
     }
+
+    public String getAgency() {
+        return agency;
+    }
+    public BigDecimal getGrossSalary() {
+        return grossSalary;
+    }
+
 }

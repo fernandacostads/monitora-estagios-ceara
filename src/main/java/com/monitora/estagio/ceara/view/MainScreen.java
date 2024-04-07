@@ -1,15 +1,31 @@
 package com.monitora.estagio.ceara.view;
 
+import com.monitora.estagio.ceara.controller.Controller;
+import com.monitora.estagio.ceara.usecases.load.LoadAllGovernmentAgency;
+import com.monitora.estagio.ceara.usecases.load.LoadAllListOrdering;
+import com.monitora.estagio.ceara.usecases.load.LoadAllSearchType;
+import com.monitora.estagio.ceara.utils.dto.FilterDTO;
+import com.monitora.estagio.ceara.utils.dto.ResultSearchDTO;
+
 import javax.swing.*;
 import java.awt.*;
 import java.net.MalformedURLException;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
 
 
 public class MainScreen extends javax.swing.JFrame {
+    private final Controller<FilterDTO> controller;
+    private final LoadAllGovernmentAgency allGovernmentAgency;
+    private final LoadAllListOrdering listOrdering;
+    private final LoadAllSearchType allSearchType;
 
-
-    public MainScreen() throws MalformedURLException {
-        initComponents();
+    public MainScreen(Controller<FilterDTO> controller, LoadAllGovernmentAgency allGovernmentAgency, LoadAllListOrdering listOrdering, LoadAllSearchType allSearchType)  {
+        this.controller = controller;
+        this.allGovernmentAgency = allGovernmentAgency;
+        this.listOrdering = listOrdering;
+        this.allSearchType = allSearchType;
     }
 
 
@@ -20,11 +36,11 @@ public class MainScreen extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        listConsulta = new javax.swing.JComboBox<>();
+        selectConsultType = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
-        listFiltro = new javax.swing.JComboBox<>();
-        buttonBuscar = new javax.swing.JButton();
-        listOrdena = new javax.swing.JComboBox<>();
+        selectFilter = new javax.swing.JComboBox<>();
+        searchButton = new javax.swing.JButton();
+        selectOrder = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -45,39 +61,41 @@ public class MainScreen extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel10.setText("Ordenar por");
 
-        listConsulta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Número de contratação", "Média salarial", "Taxa de contratação" }));
-        listConsulta.addActionListener(new java.awt.event.ActionListener() {
+        selectConsultType.setModel(new javax.swing.DefaultComboBoxModel<>(allSearchType.getAll()));
+        selectConsultType.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                listConsultaActionPerformed(evt);
+                listConsultActionPerformed(evt);
             }
         });
 
         jLabel5.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel5.setText("Órgãos");
 
-        listFiltro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todos", "Seduc", "A", "B", "C" }));
-        listFiltro.addActionListener(new java.awt.event.ActionListener() {
+        selectFilter.setModel(new javax.swing.DefaultComboBoxModel<>(allGovernmentAgency.getAll()));
+        selectFilter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                listFiltroActionPerformed(evt);
+                listFilterActionPerformed(evt);
             }
         });
 
-        buttonBuscar.setBackground(new java.awt.Color(51, 102, 255));
-        buttonBuscar.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
-        buttonBuscar.setForeground(new java.awt.Color(255, 255, 255));
-        buttonBuscar.setText("Buscar");
-        buttonBuscar.addActionListener(new java.awt.event.ActionListener() {
+        selectOrder.setModel(new javax.swing.DefaultComboBoxModel<>(listOrdering.getAll()));
+        selectOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listOrderActionPerformed(evt);
+            }
+        });
+
+        searchButton.setBackground(new java.awt.Color(51, 102, 255));
+        searchButton.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
+        searchButton.setForeground(new java.awt.Color(255, 255, 255));
+        searchButton.setText("Buscar");
+        searchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonBuscarActionPerformed(evt);
             }
         });
 
-        listOrdena.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Menor", "Maior" }));
-        listOrdena.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                listOrdenaActionPerformed(evt);
-            }
-        });
+
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 32)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 102, 255));
@@ -110,13 +128,13 @@ public class MainScreen extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(buttonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel5)
-                                .addComponent(listConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(listFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(selectConsultType, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(selectFilter, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel10)
-                                .addComponent(listOrdena, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(selectOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel9)))))
                 .addContainerGap(72, Short.MAX_VALUE))
         );
@@ -134,17 +152,17 @@ public class MainScreen extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addComponent(jLabel9)
                 .addGap(18, 18, 18)
-                .addComponent(listConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(selectConsultType, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(listFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(selectFilter, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
                 .addComponent(jLabel10)
                 .addGap(18, 18, 18)
-                .addComponent(listOrdena, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(selectOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25)
-                .addComponent(buttonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(36, Short.MAX_VALUE))
         );
 
@@ -220,7 +238,8 @@ public class MainScreen extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }
-    public static void start(){
+    public void start(){
+        System.out.println("interface");
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -235,7 +254,9 @@ public class MainScreen extends javax.swing.JFrame {
 
         java.awt.EventQueue.invokeLater(() -> {
             try {
-                new MainScreen().setVisible(true);
+                initComponents();
+                setVisible(true);
+                //new MainScreen().setVisible(true);
             } catch (MalformedURLException e) {
                 throw new RuntimeException(e);
             }
@@ -245,34 +266,43 @@ public class MainScreen extends javax.swing.JFrame {
     private void buttonBuscarActionPerformed(java.awt.event.ActionEvent evt) {
         // botão done
        //Quando apertar em Done, vai pegar qual o item que foi selecinado na caixa
-        String tipoConsulta = listConsulta.getSelectedItem().toString();
-        String orgaoSelecionado = listFiltro.getSelectedItem().toString();
-        String ordem = listOrdena.getSelectedItem().toString();
-        
+        String searchType = Objects.requireNonNull(selectConsultType.getSelectedItem()).toString();
+        String selectedGovernmentAgency = Objects.requireNonNull(selectFilter.getSelectedItem()).toString();
+        String ordering = Objects.requireNonNull(selectOrder.getSelectedItem()).toString();
+
+        FilterDTO filterDTO = new FilterDTO(searchType, selectedGovernmentAgency, ordering);
+        List<ResultSearchDTO> list = controller.execute(filterDTO);
+
+        for (ResultSearchDTO searchDTO : list){
+            System.out.println(Arrays.toString(searchDTO.toArray()));
+        }
+
         //pegar chama os controllers e pegar o resultado da busca
-        
-        System.out.println(orgaoSelecionado);
-        System.out.println(tipoConsulta);
-        System.out.println(ordem);
-        
+
+//        System.out.println(selectedGovernmentAgency);
+//        System.out.println(searchType);
+//        System.out.println(ordering);
+
+
+
         //preenche a tabela
+
+    }
+
+    private void listFilterActionPerformed(java.awt.event.ActionEvent evt) {
         
     }
 
-    private void listFiltroActionPerformed(java.awt.event.ActionEvent evt) {
-        
-    }
-
-    private void listConsultaActionPerformed(java.awt.event.ActionEvent evt) {
+    private void listConsultActionPerformed(java.awt.event.ActionEvent evt) {
        
     }
 
-    private void listOrdenaActionPerformed(java.awt.event.ActionEvent evt) {
+    private void listOrderActionPerformed(java.awt.event.ActionEvent evt) {
        
     }
 
 
-    private javax.swing.JButton buttonBuscar;
+    private javax.swing.JButton searchButton;
     private javax.swing.Box.Filler filler1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -285,8 +315,8 @@ public class MainScreen extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JComboBox<String> listConsulta;
-    private javax.swing.JComboBox<String> listFiltro;
-    private javax.swing.JComboBox<String> listOrdena;
+    private javax.swing.JComboBox<String> selectConsultType;
+    private javax.swing.JComboBox<String> selectFilter;
+    private javax.swing.JComboBox<String> selectOrder;
     public javax.swing.JTable tableResult;
 }
