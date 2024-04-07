@@ -2,11 +2,18 @@ package com.monitora.estagio.ceara.utils.dto;
 
 import java.math.BigDecimal;
 
-public record ResultSearchDTO(String governmentAgency, BigDecimal AverageSalary, Integer NumberOfHires) {
+public record ResultSearchDTO(String governmentAgency, BigDecimal averageSalary, Integer numberOfHires, String result) {
+
+    public String[] toArray() {
+        return new String[] {governmentAgency, result};
+    }
+
     public static class Builder {
         private String governmentAgency;
         private BigDecimal averageSalary;
         private Integer numberOfHires;
+        private String result;
+
 
         public Builder governmentAgency(String governmentAgency) {
             this.governmentAgency = governmentAgency;
@@ -23,8 +30,14 @@ public record ResultSearchDTO(String governmentAgency, BigDecimal AverageSalary,
             return this;
         }
 
+        public Builder result(Object result) {
+            this.result = result.toString();
+            return this;
+        }
+
+
         public ResultSearchDTO build() {
-            return new ResultSearchDTO(governmentAgency, averageSalary, numberOfHires);
+            return new ResultSearchDTO(governmentAgency, averageSalary, numberOfHires, result);
         }
     }
 }

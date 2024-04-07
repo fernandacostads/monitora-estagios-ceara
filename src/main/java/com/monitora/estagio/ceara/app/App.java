@@ -31,6 +31,7 @@ public class App {
 
         Controller<FilterDTO> controller = ControllerConfig.config(service);
 
+
         MainScreen mainScreen = MainScreenConfig.config(controller);
         mainScreen.start();
 

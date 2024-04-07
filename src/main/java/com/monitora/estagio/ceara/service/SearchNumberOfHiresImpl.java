@@ -5,6 +5,7 @@ import com.monitora.estagio.ceara.repository.GovernmentAgencyRepository;
 import com.monitora.estagio.ceara.usecases.search.SearchNumberOfHires;
 import com.monitora.estagio.ceara.utils.dto.ResultSearchDTO;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -24,7 +25,9 @@ public class SearchNumberOfHiresImpl implements SearchNumberOfHires {
                 .map(entry -> new ResultSearchDTO.Builder()
                         .governmentAgency(entry.getKey())
                         .numberOfHires(entry.getValue().size())
+                        .result(entry.getValue().size())
                         .build())
+                .sorted(Comparator.comparing(ResultSearchDTO::numberOfHires))
                 .collect(Collectors.toList());
     }
 

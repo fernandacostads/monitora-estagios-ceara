@@ -7,6 +7,7 @@ import com.monitora.estagio.ceara.utils.dto.ResultSearchDTO;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -21,17 +22,22 @@ public class SearchAverageSalaryImpl implements SearchAverageSalary {
     @Override
     public List<ResultSearchDTO> exucute() {
         Map<String, List<GovernmentAgency>> mapByAgency = repository.getMapByAgency();
+
+        CalculateAverage calculateAverage = (List<GovernmentAgency> agency) -> agency.stream()
+                .map(GovernmentAgency::getGrossSalary)
+                .reduce(BigDecimal.ZERO, BigDecimal::add)
+                .divide(BigDecimal.valueOf(agency.size()), 2, RoundingMode.HALF_UP);
+
+        CreateResultSearchDTO createResultSearchDTO = (String entry, BigDecimal average) ->
+                new ResultSearchDTO.Builder()
+                        .governmentAgency(entry)
+                        .averageSalary(average)
+                        .result(average)
+                        .build();
+
         return mapByAgency.entrySet().stream()
-                .map(entry -> {
-                    List<GovernmentAgency> agencies = entry.getValue();
-                    BigDecimal total = agencies.stream()
-                            .map(GovernmentAgency::getGrossSalary)
-                            .reduce(BigDecimal.ZERO, BigDecimal::add);
-                    BigDecimal average = total.divide(BigDecimal.valueOf(agencies.size()), 2, RoundingMode.HALF_UP);
-                    return new ResultSearchDTO.Builder()
-                            .governmentAgency(entry.getKey())
-                            .averageSalary(average).build();
-                })
+                .map(entry -> createResultSearchDTO.newDTO(entry.getKey(), calculateAverage.calculate(entry.getValue())
+                )).sorted(Comparator.comparing(ResultSearchDTO::averageSalary))
                 .collect(Collectors.toList());
     }
 }

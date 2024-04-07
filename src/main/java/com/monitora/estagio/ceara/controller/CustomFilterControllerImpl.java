@@ -15,12 +15,12 @@ public class CustomFilterControllerImpl implements Controller<FilterDTO>{
     }
 
     @Override
-    public void execute(FilterDTO dto) {
+    public List<ResultSearchDTO> execute(FilterDTO dto) {
         List<ResultSearchDTO> resultSearchDTOS = dto.searchType()
                 .equalsIgnoreCase("Número de contratação")
                 ? service.searchNumberOfHires().exucute()
                 : service.searchAverageSalary().exucute();
         resultSearchDTOS = service.customFilter().filter(resultSearchDTOS, dto.selectedGovernmentAgency(), dto.ordering());
-        System.out.println(resultSearchDTOS.toString());
+        return resultSearchDTOS;
     }
 }

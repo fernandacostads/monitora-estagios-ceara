@@ -5,10 +5,13 @@ import com.monitora.estagio.ceara.usecases.load.LoadAllGovernmentAgency;
 import com.monitora.estagio.ceara.usecases.load.LoadAllListOrdering;
 import com.monitora.estagio.ceara.usecases.load.LoadAllSearchType;
 import com.monitora.estagio.ceara.utils.dto.FilterDTO;
+import com.monitora.estagio.ceara.utils.dto.ResultSearchDTO;
 
 import javax.swing.*;
 import java.awt.*;
 import java.net.MalformedURLException;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 
@@ -268,7 +271,11 @@ public class MainScreen extends javax.swing.JFrame {
         String ordering = Objects.requireNonNull(selectOrder.getSelectedItem()).toString();
 
         FilterDTO filterDTO = new FilterDTO(searchType, selectedGovernmentAgency, ordering);
-        controller.execute(filterDTO);
+        List<ResultSearchDTO> list = controller.execute(filterDTO);
+
+        for (ResultSearchDTO searchDTO : list){
+            System.out.println(Arrays.toString(searchDTO.toArray()));
+        }
 
         //pegar chama os controllers e pegar o resultado da busca
 
