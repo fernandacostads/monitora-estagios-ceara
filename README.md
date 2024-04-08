@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <p align="center">
-   <a href="https://ibb.co/5x8R7VV"><img src="https://i.ibb.co/Kzqr1HH/BANNER.png" alt="BANNER" border="0"></a>
+   <a href="https://ibb.co/5x8R7VV"><img src="https://i.ibb.co/Kzqr1HH/BANNER.png" alt="BANNER" border="0" width="90%" height="100%"></a>
 </p>
 &nbsp;
 
@@ -32,7 +32,7 @@ Aqui você vai encontrar a resolução do projeto final, onde desenvolvemos uma 
 
 ## Arquitetura de Pastas do projeto ☕
 <p align="center">
-   <a href="https://ibb.co/5kTD1x9"><img src="https://i.ibb.co/cwJ5yXv/Monitora-estagios-ceara-drawio.png" alt="Monitora-estagios-ceara-drawio" border="0"></a>
+   <a href="https://ibb.co/5kTD1x9"><img src="https://i.ibb.co/cwJ5yXv/Monitora-estagios-ceara-drawio.png" alt="Monitora-estagios-ceara-drawio" border="0" width="75%"></a>
 </p>
 <p align="center"> Figura: Organização de pastas do projeto na data de 08/04/24</p>
 
@@ -40,7 +40,7 @@ Aqui você vai encontrar a resolução do projeto final, onde desenvolvemos uma 
 <a name="meto"></a>
 
 <p align="center">
-   <a href="https://ibb.co/NZJjLQs"><img src="https://i.ibb.co/bzCBrqP/project.gif" alt="project" border="0"></a>
+   <a href="https://ibb.co/NZJjLQs"><img src="https://i.ibb.co/bzCBrqP/project.gif" alt="project" border="0" width="75%"></a>
 </p>
 
 <p align="center"> Figura: Quadro de tarefas do projeto</p>
@@ -75,7 +75,7 @@ Algumas etapas do desenvolvimento foram:
 
  <p align="center">
   <a href="#">
-   <img src="https://i.ibb.co/6B1vqvy/demo.gif" alt="demo" border="0">
+   <img src="https://i.ibb.co/6B1vqvy/demo.gif" alt="demo" border="0" width="80%">
   </a>
 </p>
 
@@ -86,7 +86,7 @@ Algumas etapas do desenvolvimento foram:
 
 <p align="center">
   <a href="#">
-  <a href="https://ibb.co/2Ns8p8F"><img src="https://i.ibb.co/6B1vqvy/demo.gif" alt="demo" border="0"></a>
+  <a href="https://ibb.co/2Ns8p8F"><img src="https://i.ibb.co/6B1vqvy/demo.gif" alt="demo" border="0" width="80%"></a>
   </a>
 </p>
 
@@ -128,10 +128,10 @@ Como já mencionado, utilizamos o  Java Swing, que é uma biblioteca de componen
 Algumas telas desenvolvidas:
 
 <p align="center">
- <a href="https://ibb.co/kGWF5Q2"><img src="https://i.ibb.co/qDPw7kY/Screencastfrom08-04-2024131127-ezgif-com-video-to-gif-converter.gif" alt="Screencastfrom08-04-2024131127-ezgif-com-video-to-gif-converter" border="0"></a>
+ <a href="https://ibb.co/kGWF5Q2"><img src="https://i.ibb.co/qDPw7kY/Screencastfrom08-04-2024131127-ezgif-com-video-to-gif-converter.gif" alt="Screencastfrom08-04-2024131127-ezgif-com-video-to-gif-converter" border="0" width="80%"></a>
 </p>
 <p align="center">
- <a href="https://ibb.co/VVX7mRJ"><img src="https://i.ibb.co/v127YpV/Screenshot-from-2024-04-08-13-22-54.png" alt="Screenshot-from-2024-04-08-13-22-54" border="0"></a>
+ <a href="https://ibb.co/VVX7mRJ"><img src="https://i.ibb.co/v127YpV/Screenshot-from-2024-04-08-13-22-54.png" alt="Screenshot-from-2024-04-08-13-22-54" border="0" width="80%"></a>
 </p>
 
 ### Dados
