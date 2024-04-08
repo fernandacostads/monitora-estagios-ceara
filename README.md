@@ -159,7 +159,7 @@ Por padrão, estamos usando a pasta `view` para armazenar e manipularmos as inte
 
 <br />
 <a href="https://www.linkedin.com/in/elissatavares/" alt="LinkedIn">
-  <img src="https://img.shields.io/badge/-Linkedin-0e76a8?style=flat-square&logo=Linkedin&logoColor=white&link=https://linkedin.com/in/ma-elissa" /></a>
+  <img src="https://img.shields.io/badge/-Linkedin-0e76a8?style=flat-square&logo=Linkedin&logoColor=white&link=https://linkedin.com/in/elissatavares" /></a>
 </td>
   </tr>
 </table>
