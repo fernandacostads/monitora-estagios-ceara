@@ -75,7 +75,7 @@ Algumas etapas do desenvolvimento foram:
 
  <p align="center">
   <a href="#">
-   <img src="https://i.ibb.co/6B1vqvy/demo.gif" alt="demo" border="0" width="80%">
+   <img src="https://i.ibb.co/6B1vqvy/demo.gif" alt="demo" border="0">
   </a>
 </p>
 
@@ -85,9 +85,7 @@ Algumas etapas do desenvolvimento foram:
 <a name="fluxo"></a>
 
 <p align="center">
-  <a href="#">
-  <a href="https://ibb.co/2Ns8p8F"><img src="https://i.ibb.co/6B1vqvy/demo.gif" alt="demo" border="0" width="80%"></a>
-  </a>
+  <a href="https://ibb.co/kGWF5Q2"><img src="https://i.ibb.co/qDPw7kY/Screencastfrom08-04-2024131127-ezgif-com-video-to-gif-converter.gif" alt="Screencastfrom08-04-2024131127-ezgif-com-video-to-gif-converter" border="0"></a>
 </p>
 
 <p align="center"> Figura: Fluxo para consultar número de contratação</p>
@@ -131,7 +129,7 @@ Algumas telas desenvolvidas:
  <a href="https://ibb.co/kGWF5Q2"><img src="https://i.ibb.co/qDPw7kY/Screencastfrom08-04-2024131127-ezgif-com-video-to-gif-converter.gif" alt="Screencastfrom08-04-2024131127-ezgif-com-video-to-gif-converter" border="0"></a>
 </p>
 <p align="center">
-<a href="https://ibb.co/VVX7mRJ"><img src="https://i.ibb.co/v127YpV/Screenshot-from-2024-04-08-13-22-54.png" alt="Screenshot-from-2024-04-08-13-22-54" border="0"></a>
+<a href="https://ibb.co/VVX7mRJ"><img src="src/main/java/com/monitora/estagio/ceara/resources/img/semace.png"></a>
 </p>
 
 ### Dados
