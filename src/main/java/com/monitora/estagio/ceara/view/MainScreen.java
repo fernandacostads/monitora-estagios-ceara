@@ -32,23 +32,22 @@ public class MainScreen extends javax.swing.JFrame {
 
     @SuppressWarnings("unchecked")
     private void initComponents() throws MalformedURLException {
-        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
-        jPanel1 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        JPanel jPanel1 = new JPanel();
+        JLabel jLabel9 = new JLabel();
+        JLabel jLabel10 = new JLabel();
+        JLabel jLabel6 = new JLabel();
         selectConsultType = new javax.swing.JComboBox<>();
-        jLabel5 = new javax.swing.JLabel();
+        JLabel jLabel5 = new JLabel();
         selectFilter = new javax.swing.JComboBox<>();
-        searchButton = new javax.swing.JButton();
+        JButton searchButton = new JButton();
         selectOrder = new javax.swing.JComboBox<>();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        JLabel jLabel1 = new JLabel();
+        JLabel jLabel2 = new JLabel();
+        JLabel jLabel3 = new JLabel();
+        JPanel jPanel7 = new JPanel();
+        JScrollPane jScrollPane1 = new JScrollPane();
         tableResult = new javax.swing.JTable();
-        jLabel12 = new javax.swing.JLabel();
+        JLabel jLabel12 = new JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Monitor de estágio");
@@ -63,28 +62,28 @@ public class MainScreen extends javax.swing.JFrame {
         jLabel10.setText("Ordenar por");
 
         selectConsultType.setModel(new javax.swing.DefaultComboBoxModel<>(allSearchType.getAll()));
-        selectConsultType.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                listConsultActionPerformed(evt);
-            }
-        });
+//        selectConsultType.addActionListener(new java.awt.event.ActionListener() {
+//            public void actionPerformed(java.awt.event.ActionEvent evt) {
+//                listConsultActionPerformed(evt);
+//            }
+//        });
 
         jLabel5.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel5.setText("Órgãos");
 
         selectFilter.setModel(new javax.swing.DefaultComboBoxModel<>(allGovernmentAgency.getAll()));
-        selectFilter.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                listFilterActionPerformed(evt);
-            }
-        });
+//        selectFilter.addActionListener(new java.awt.event.ActionListener() {
+//            public void actionPerformed(java.awt.event.ActionEvent evt) {
+//                listFilterActionPerformed(evt);
+//            }
+//        });
 
         selectOrder.setModel(new javax.swing.DefaultComboBoxModel<>(listOrdering.getAll()));
-        selectOrder.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                listOrderActionPerformed(evt);
-            }
-        });
+//        selectOrder.addActionListener(new java.awt.event.ActionListener() {
+//            public void actionPerformed(java.awt.event.ActionEvent evt) {
+//                listOrderActionPerformed(evt);
+//            }
+//        });
 
         searchButton.setBackground(new java.awt.Color(51, 102, 255));
         searchButton.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
@@ -240,7 +239,7 @@ public class MainScreen extends javax.swing.JFrame {
     }
 
     public void start() {
-        System.out.println("interface");
+        System.out.println("start interface");
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -278,31 +277,10 @@ public class MainScreen extends javax.swing.JFrame {
         list.forEach(searchDTO -> model.addRow(new Object[]{searchDTO.governmentAgency(), searchDTO.result()}));
     }
 
-    private void listFilterActionPerformed(java.awt.event.ActionEvent evt) {
+//    private void listFilterActionPerformed(java.awt.event.ActionEvent evt) {}
+//    private void listConsultActionPerformed(java.awt.event.ActionEvent evt) {}
+//    private void listOrderActionPerformed(java.awt.event.ActionEvent evt) {}
 
-    }
-
-    private void listConsultActionPerformed(java.awt.event.ActionEvent evt) {
-
-    }
-
-    private void listOrderActionPerformed(java.awt.event.ActionEvent evt) {
-
-    }
-
-    private javax.swing.JButton searchButton;
-    private javax.swing.Box.Filler filler1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JComboBox<String> selectConsultType;
     private javax.swing.JComboBox<String> selectFilter;
     private javax.swing.JComboBox<String> selectOrder;

@@ -35,26 +35,6 @@ public class GovernmentAgency {
         this.daily = daily;
     }
 
-    @Override
-    public String toString() {
-        return "GovernmentAgency{" +
-                "date=" + date +
-                ", personName='" + personName + '\'' +
-                ", agency='" + agency + '\'' +
-                ", role='" + role + '\'' +
-                ", functionStatus='" + functionStatus + '\'' +
-                ", discountTotal='" + discountTotal + '\'' +
-                ", reductionBasedConstitutionalCeiling=" + reductionBasedConstitutionalCeiling +
-                ", otherDiscounts=" + otherDiscounts +
-                ", grossSalary=" + grossSalary +
-                ", netSalary=" + netSalary +
-                ", daily=" + daily +
-                '}';
-    }
-
-    public String getAgency() {
-        return agency;
-    }
     public BigDecimal getGrossSalary() {
         return grossSalary;
     }
