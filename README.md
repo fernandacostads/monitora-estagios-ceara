@@ -153,7 +153,7 @@ Por padrão, estamos usando a pasta `view` para armazenar e manipularmos as inte
 <a href="https://www.linkedin.com/in/fernandacostads/" alt="LinkedIn">
   <img src="https://img.shields.io/badge/-Linkedin-0e76a8?style=flat-square&logo=Linkedin&logoColor=white&link=https://linkedin.com/in/fernandacostads" /></a>
 </td>
-    <td align="center"><a href="https://github.com/ma-elissa" target="_blank"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/128258713?v=4" width="100px;" alt=""/>
+    <td align="center"><a href="https://github.com/elissatavares" target="_blank"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/128258713?v=4" width="100px;" alt=""/>
     <br />
     <sub><b>Maria Elissa</b></sub></a>
 
