@@ -14,7 +14,7 @@
 
 
 # Monitora Estagios Ceará - JAVA APP ☕
-O projeto * Monitora Estagios Cearáa* é uma aplicação em Java desenvolvida como parte de um sistema de consulta de estágios em órgãos públicos do Ceará. A aplicação tem como objetivo principal facilitar o processo de consulta de estágios em órgãos do Estado, melhorando a experiência para pessoas que desejam obter dados rapidamente e de maneira filtrada.
+O projeto *Monitora Estagios Ceará* é uma aplicação em Java desenvolvida como parte de um sistema de consulta de estágios em órgãos públicos do Ceará. A aplicação tem como objetivo principal facilitar o processo de consulta de estágios em órgãos do Estado, melhorando a experiência para pessoas que desejam obter dados rapidamente e de maneira filtrada.
 
 - <a href="#intro">Introdução</a>
 - <a href="#arq">Arquitetura de Pastas do projeto</a>
@@ -31,6 +31,7 @@ Ao longo do módulo de Técnicas de Programação, nos aprofundamos nos conceito
 Aqui você vai encontrar a resolução do projeto final, onde desenvolvemos uma aplicação utilizando os novos conhecimentos adquiridos.
 
 ## Arquitetura de Pastas do projeto ☕
+<a name="arq"></a>
 <p align="center">
    <a href="https://ibb.co/5kTD1x9"><img src="src/main/java/com/monitora/estagio/ceara/resources/img/Monitora-estagios-ceara.drawio.png" alt="Monitora-estagios-ceara-drawio"></a>
 </p>
@@ -183,4 +184,4 @@ Esse projeto está sob licença. Veja o arquivo [LICENÇA](https://github.com/fe
 
 <p align="right">(<a href="#readme-top">Voltar ao topo</a>)</p>
 <hr>
-<p align="center">Copyright © 2024 | Monitora Estagios Cearaá by Fernanda Costa e Maria Elissa</p>
+<p align="center">Copyright © 2024 | Monitora Estagios Ceará by Fernanda Costa e Maria Elissa</p>
