@@ -23,4 +23,5 @@ public class CustomFilterControllerImpl implements Controller<FilterDTO>{
         resultSearchDTOS = service.customFilter().filter(resultSearchDTOS, dto.selectedGovernmentAgency(), dto.ordering());
         return resultSearchDTOS;
     }
+
 }

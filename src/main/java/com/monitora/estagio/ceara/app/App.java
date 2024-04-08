@@ -18,26 +18,15 @@ import java.util.concurrent.Future;
 
 public class App {
 
-    public static void main(String[] args) throws ExecutionException, InterruptedException {
-        long inicio = System.currentTimeMillis();
+    public static void main(String[] args) {
         Map<String, List<GovernmentAgencyDTO>> mapByAgencyDTO = MapConfig.config();
-        TaskRepositoryConfig repositoryConfig = new TaskRepositoryConfig(mapByAgencyDTO);
 
-        ExecutorService executorService = Executors.newCachedThreadPool();
-        Future<GovernmentAgencyRepository> repository = executorService.submit(repositoryConfig);
-        Thread.sleep(50);
+        ServiceConfig service = ServiceConfigImpl.config(new GovernmentAgencyRepository(mapByAgencyDTO));
 
-        ServiceConfig service = ServiceConfigImpl.config(repository.get());
-
-        Controller<FilterDTO> controller = ControllerConfig.config(service);
-
+        Controller<FilterDTO> controller = new CustomFilterControllerImpl(service);
 
         MainScreen mainScreen = MainScreenConfig.config(controller);
         mainScreen.start();
-
-        long fim = System.currentTimeMillis();
-        System.out.println("programa:" + (fim - inicio));
-
-
     }
+
 }

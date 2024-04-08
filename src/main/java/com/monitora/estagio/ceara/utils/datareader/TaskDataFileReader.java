@@ -35,8 +35,10 @@ public class TaskDataFileReader implements Runnable {
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
             this.govAgencyList = br.lines()
                     .skip(1)
+                    .filter(line -> !line.isEmpty())
                     .map(newDTO::run)
                     .collect(Collectors.toList());
+
             // Sinaliza que esta thread terminou de executar
             latch.countDown();
         } catch (IOException e) {

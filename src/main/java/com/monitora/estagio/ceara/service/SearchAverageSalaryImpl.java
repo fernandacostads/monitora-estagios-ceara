@@ -28,16 +28,17 @@ public class SearchAverageSalaryImpl implements SearchAverageSalary {
                 .reduce(BigDecimal.ZERO, BigDecimal::add)
                 .divide(BigDecimal.valueOf(agency.size()), 2, RoundingMode.HALF_UP);
 
-        CreateResultSearchDTO createResultSearchDTO = (String entry, BigDecimal average) ->
-                new ResultSearchDTO.Builder()
-                        .governmentAgency(entry)
-                        .averageSalary(average)
-                        .result(average)
-                        .build();
 
         return mapByAgency.entrySet().stream()
-                .map(entry -> createResultSearchDTO.newDTO(entry.getKey(), calculateAverage.calculate(entry.getValue())
-                )).sorted(Comparator.comparing(ResultSearchDTO::averageSalary))
+                .map(entry -> {
+                    BigDecimal average = calculateAverage.calculate(entry.getValue());
+                    return new ResultSearchDTO.Builder()
+                            .governmentAgency(entry.getKey())
+                            .averageSalary(average)
+                            .result(average)
+                            .build();
+                }).sorted(Comparator.comparing(ResultSearchDTO::averageSalary))
                 .collect(Collectors.toList());
+
     }
 }

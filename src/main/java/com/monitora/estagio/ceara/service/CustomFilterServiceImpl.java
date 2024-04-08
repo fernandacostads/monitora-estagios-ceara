@@ -4,7 +4,6 @@ import com.monitora.estagio.ceara.usecases.search.CustomFilter;
 import com.monitora.estagio.ceara.utils.dto.ResultSearchDTO;
 
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class CustomFilterServiceImpl implements CustomFilter {
@@ -17,7 +16,6 @@ public class CustomFilterServiceImpl implements CustomFilter {
         if (ordering.equalsIgnoreCase("maior")){
             Collections.reverse(governmentAgencyDTOList);
         }
-        System.out.println(governmentAgencyDTOList.size());
         return governmentAgencyDTOList;
     }
 }

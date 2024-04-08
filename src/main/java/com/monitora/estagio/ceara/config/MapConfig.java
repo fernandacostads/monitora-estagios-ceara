@@ -1,10 +1,8 @@
 package com.monitora.estagio.ceara.config;
 
-import com.monitora.estagio.ceara.repository.GovernmentAgencyRepository;
 import com.monitora.estagio.ceara.utils.datareader.TaskDataFileReader;
 import com.monitora.estagio.ceara.utils.dto.GovernmentAgencyDTO;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
@@ -57,12 +55,12 @@ public class MapConfig {
                         .collect(Collectors.groupingBy(GovernmentAgencyDTO::agency));
 
         long fim = System.currentTimeMillis();
-        System.out.println("esperando threads:" + (fim - inicio));
+        System.out.println("TIME esperando threads:" + (fim - inicio));
 
         return mapByAgencyDTO;
     }
 
     public static Map<String, List<GovernmentAgencyDTO>> getMapByAgencyDTO() {
-        return Collections.unmodifiableMap(mapByAgencyDTO);
+        return mapByAgencyDTO;
     }
 }

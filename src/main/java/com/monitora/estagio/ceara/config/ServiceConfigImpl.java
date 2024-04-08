@@ -7,6 +7,7 @@ import com.monitora.estagio.ceara.service.SearchNumberOfHiresImpl;
 
 public class ServiceConfigImpl {
     public static ServiceConfig config(GovernmentAgencyRepository repository){
+        System.out.println("config Service");
         return new ServiceConfig(new SearchNumberOfHiresImpl(repository), new SearchAverageSalaryImpl(repository), new CustomFilterServiceImpl());
     }
 }
